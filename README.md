@@ -28,7 +28,7 @@ Initial Component Hierarchy Diagram (CHD)
 - Flowbite / Tailwind
 
 ### Mobile Wireframe
-Initial Mobile Wireframe
+Initial Mobile Wireframe<br>
 ![](assets/ephemera_mwireframe.png)
 
 
