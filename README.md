@@ -10,18 +10,28 @@ Anyone starting a new habit, especially a creative writing endeavor, encounters 
 
 ## Project Planning
 ### Scheduling
-Trello Board
+Trello Board<br>
+https://trello.com/b/rfrgtfRA/capstone-project
+![](assets/ephemera_trello.png)
 
 ### Backend
 Initial Entity Relationship Diagram (ERD)
+![](assets/ephemera_erd.png)
 
 ### Frontend
 Initial Component Hierarchy Diagram (CHD)
+![](assets/ephemera_CHD.png)
 
 ### Technologies
 - Django
 - React
 - Flowbite / Tailwind
+
+### Mobile Wireframe
+Initial Mobile Wireframe
+![](assets/ephemera_mwireframe.png)
+
+
 
 ## Contact
 Jason Carmichael<br>
