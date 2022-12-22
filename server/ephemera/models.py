@@ -14,9 +14,9 @@ class User(models.Model):
 
 class Haiku(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='haikus')
-    title = models.CharField(max_length=50, blank=True, default=False)
-    body = models.CharField(max_length=300)
-    created_on = models.DateField(auto_now=False, default='date.today')
+    title = models.CharField(max_length=50, unique=True)
+    body = models.TextField(max_length=300)
+    created_on = models.DateField(auto_now=True)
 
     def __str__(self):
-        return self.name 
+        return self.title 
