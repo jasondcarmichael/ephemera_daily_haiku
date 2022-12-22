@@ -1,9 +1,10 @@
 from django.urls import path
 from . import views
+from rest_framework.routers import DefaultRouter
 
 urlpatterns = [
-    path('', views.user_list, name='user_list'),
-    path('haikus/', views.haiku_list, name='haiku_list'),
-    path('users/<int:pk>', views.user_detail, name='user_detail'),
-    path('haikus/<int:pk>', views.haiku_detail, name='haiku_detail')
+    path('', views.UserList.as_view(), name='user_list'),
+    path('users/<int:pk>', views.UserDetail.as_view(), name='user_detail'),
+    path('haikus/', views.HaikuList.as_view(), name='haiku_list'),
+    path('haikus/<int:pk>', views.HaikuDetail.as_view(), name='haiku_detail')
 ]
