@@ -1,5 +1,7 @@
 # Ephemera: Developing a Creative Practice Habit
 
+![](assets/basho_waterfall.png)
+
 ## Description
 A Full Stack Build Using Django and React
 
