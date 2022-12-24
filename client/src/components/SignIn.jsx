@@ -48,7 +48,7 @@ export default function SignIn () {
             >
                 <Modal.Header />
                 <Modal.Body>
-                <form classname="flex flex-col gap-4" onSubmit={handleSignin}>
+                <form className="flex flex-col gap-4" onSubmit={handleSignin}>
                 <div className="space-y-6 px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8">
                     <h3 className="text-xl font-medium text-gray-900 dark:text-white">
                     Sign in to Ephemera
