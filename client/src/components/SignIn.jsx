@@ -1,10 +1,13 @@
 import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import {Modal, Button, Label, TextInput, Checkbox } from 'flowbite-react'
 import { DataContext } from "../DataContext";
 import axios from 'axios'
 
 
 export default function SignIn () {
+
+    let navigate = useNavigate()
 
     // const [user, setUser] = useContext(DataContext)
     const [user, setUser] = useState('')
@@ -23,10 +26,11 @@ export default function SignIn () {
     const handleSignin = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.get('', formData)
+            const res = await axios.get('http://localhost:8000/users/1', formData)
             console.log(res.data)
             setUser(formData.username)
             toggleSigninModal()
+            navigate('/feed')
         } catch (error) {
             throw error
         }
@@ -101,7 +105,7 @@ export default function SignIn () {
                     </a>
                     </div>
                     <div className="w-full">
-                    <Button>
+                    <Button type='submit'>
                         Sign in to your account
                     </Button>
                     </div>
