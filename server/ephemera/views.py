@@ -16,6 +16,12 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+class UserDetailByUsername(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    lookup_field = 'username'
+
+
 class HaikuList(generics.ListCreateAPIView):
     queryset = Haiku.objects.all()
     serializer_class = HaikuSerializer
