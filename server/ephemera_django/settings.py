@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0q1duh8hsj274*h$#2$=a%o$=%o+rh0rn+dtt_cp$$!qdsa#^#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -87,6 +87,8 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
+AUTH_USER_MODEL = 'ephemera.User'
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -138,9 +140,9 @@ WSGI_APPLICATION = 'ephemera_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ephemera',
-        'USER': 'ephemerauser',
-        'PASSWORD': 'ephemera',
+        'NAME': 'ephemera_with_auth',
+        'USER': 'grandmaster',
+        'PASSWORD': 'haiku',
         'HOST': 'localhost'
     }
 }
