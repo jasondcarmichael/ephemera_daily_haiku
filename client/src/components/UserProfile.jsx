@@ -50,13 +50,13 @@ export default function UserProfile() {
                 <h2>EMAIL: {profiles.email}</h2>
                 <h2>TAGLINE: {profiles.tagline}</h2>
             </div>
-            <div>
+            <div className="my-poems-container">
                 <h2>My Poems</h2>
                 {profiles.haikus.map((haiku) => (
-                    <div key={haiku.id}>
+                    <div classname="my-poems-card" key={haiku.id}>
                     <h2>{haiku.created_on}</h2>
                     <h2>{haiku.title}</h2>
-                    <h2>{haiku.body}</h2>
+                    <h2 className="haiku-body">{haiku.body}</h2>
                     <Link to="edit_post" state={{myHaiku:haiku}}> EDIT </Link>
                     </div>
                 ))}

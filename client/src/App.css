@@ -50,3 +50,11 @@
   color: #61dafb;
 }
 
+.haiku-body {
+  white-space: pre-wrap;
+}
+
+#haiku-body {
+  white-space: pre-wrap;
+}
+
