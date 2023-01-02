@@ -10,25 +10,33 @@ export default function SignIn () {
     let navigate = useNavigate()
 
     // const [user, setUser] = useContext(DataContext)
-    const [user, setUser] = useState('')
-    const [formData, setFormData] = useState({username:'', password:''})
+    // const [user, setUser] = useState('')
+    // const [formData, setFormData] = useState({username:'', password:''})
+    const {setSignInStatus, user, setUser, setAuth, setTokens} = useContext(DataContext)
+    const [signin, setSignin] = useState({username:'', password:''})
+   
+    
     const [ signinModal, setSigninModal ] = useState(false)
 
     const toggleSigninModal = () => {
         setSigninModal(!signinModal)
-        setFormData({username:'', password:''})
+        setSignin({username:'', password:''})
     }
 
-    const handleSigninForm = (e) => {
-        setFormData({...formData, [e.target.name]: e.target.value})
+    const handleChange = (e) => {
+        setSignin({...signin, [e.target.name]: e.target.value})
     }
 
-    const handleSignin = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.get('http://localhost:8000/users/1', formData)
+            const res = await axios.post('http://localhost:8000/api/token/', signin)
             console.log(res.data)
-            setUser(formData.username)
+            localStorage.setItem('token', res.data.access)
+            localStorage.setItem('user', signin.username)
+            setTokens(res.data)
+            setAuth(true)
+            setUser(signin.username)
             toggleSigninModal()
             navigate('/feed')
         } catch (error) {
@@ -38,12 +46,15 @@ export default function SignIn () {
  
     return (
         <div>
+            {user ? <h2>
+                <span className="block text-sm">
+                    {user}
+                </span> 
+            </h2> : null}
             <Button onClick={toggleSigninModal}>
                 Sign In
             </Button>
-            {/* <span className="block text-sm">
-                {user}
-            </span> */}
+            
             <Modal
                 show={signinModal}
                 size="md"
@@ -52,7 +63,7 @@ export default function SignIn () {
             >
                 <Modal.Header />
                 <Modal.Body>
-                <form className="flex flex-col gap-4" onSubmit={handleSignin}>
+                <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
                 <div className="space-y-6 px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8">
                     <h3 className="text-xl font-medium text-gray-900 dark:text-white">
                     Sign in to Ephemera
@@ -70,7 +81,7 @@ export default function SignIn () {
                             placeholder="username"
                             name="username"
                             required={true}
-                            onChange={handleSigninForm}
+                            onChange={handleChange}
                         />
                     </div>
                     <div>
@@ -86,8 +97,8 @@ export default function SignIn () {
                             placeholder="password"
                             required={true}
                             name="password"
-                            value={formData.password}
-                            onChange={handleSigninForm}
+                            value={signin.password}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className="flex justify-between">
