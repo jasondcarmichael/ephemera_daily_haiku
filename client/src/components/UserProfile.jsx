@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { DataContext } from "../DataContext";
 import Client from "../services/api";
 
@@ -57,6 +57,7 @@ export default function UserProfile() {
                     <h2>{haiku.created_on}</h2>
                     <h2>{haiku.title}</h2>
                     <h2>{haiku.body}</h2>
+                    <Link to="edit_post" state={{myHaiku:haiku}}> EDIT </Link>
                     </div>
                 ))}
                 

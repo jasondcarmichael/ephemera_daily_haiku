@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Feed from './components/Feed';
 import UserProfile from './components/UserProfile';
 import CreatePost from './components/CreatePost';
+import EditPost from './components/EditPost';
 
 function App() {
 
@@ -61,6 +62,7 @@ function App() {
                 <Route path = "/feed" element = {<Feed />} />
                 <Route path = "/profile" element = {<UserProfile />} />
                 <Route path = "/create" element = {<CreatePost />} />
+                <Route path = "/profile/edit_post" element = {<EditPost />} />
             </Routes>
         </div>
 

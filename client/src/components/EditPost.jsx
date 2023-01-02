@@ -1,37 +1,38 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useContext } from "react";
 import { DataContext } from "../DataContext";
 import Client from "../services/api";
 
-export default function CreatePost() {
+export default function EditPost() {
+
+    let location = useLocation()
+    let myHaiku = location.state.myHaiku
+    console.log(myHaiku)
 
     let navigate = useNavigate()
     const {user, setUser, profiles, setProfiles} = useContext(DataContext)
 
     const initialState = {
-        createdOn: "",
-        userId: "",
-        title: "",
-        body: "",
+        title: myHaiku.title,
+        body: myHaiku.body,
       };
-
-    const [formState, setFormState] = useState(initialState)
-
+    const [formState, setFormState] = useState(initialState);
+    
     const handleChange = (event) => {
-        setFormState({ ...formState, [event.target.id]: event.target.value });
-      };
+    setFormState({ ...formState, [event.target.id]: event.target.value });
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         console.log(formState);
         setFormState(initialState);
-        const createPost = {
+        const updatePost = {
           user_id: profiles.id,
           title: formState.title,
           body: formState.body,
         };
         try {
-            const res = await Client.post("haikus/", createPost)
+            const res = await Client.put(`haikus/${myHaiku.id}`, updatePost)
             .then((response) => {
             console.log(response.status);
             console.log(response.data.token);
@@ -39,13 +40,14 @@ export default function CreatePost() {
 
         } catch (error) {
             throw error
-        }
-        
+        }  
     };
+
+
 
     return (
         <div>
-            <h2>Write a Haiku</h2>
+            <h2>Edit Your Haiku</h2>
             <form onSubmit={handleSubmit}>
                 <p>Title</p>
                 <input id="title" type="text" placeholder="Title here" maxLength="50" onChange={handleChange} value={formState.title} />
@@ -54,6 +56,6 @@ export default function CreatePost() {
                 <input type="submit" />
             </form>
         </div>
-
+        
     )
 }
