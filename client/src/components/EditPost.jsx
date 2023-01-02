@@ -7,7 +7,7 @@ export default function EditPost() {
 
     let location = useLocation()
     let myHaiku = location.state.myHaiku
-    console.log(myHaiku)
+    // console.log(myHaiku)
 
     let navigate = useNavigate()
     const {user, setUser, profiles, setProfiles} = useContext(DataContext)
@@ -24,7 +24,7 @@ export default function EditPost() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(formState);
+        // console.log(formState);
         setFormState(initialState);
         const updatePost = {
           user_id: profiles.id,
@@ -43,7 +43,15 @@ export default function EditPost() {
         }  
     };
 
-
+    const deletePost = async () => {
+        try {
+            const response = await Client.delete(`haikus/${myHaiku.id}`)
+            console.log(`deleted ${myHaiku.title} successfully`)
+            console.log(response.status)
+        } catch (error) {
+            throw error
+        } 
+    }
 
     return (
         <div>
@@ -52,9 +60,11 @@ export default function EditPost() {
                 <p>Title</p>
                 <input id="title" type="text" placeholder="Title here" maxLength="50" onChange={handleChange} value={formState.title} />
                 <input id="body" type="text" placeholder="Haiku here" maxLength="255" onChange={handleChange} value={formState.body} />
-                
                 <input type="submit" />
             </form>
+            <div>
+                <button onClick={deletePost}>DELETE</button>
+            </div>
         </div>
         
     )
