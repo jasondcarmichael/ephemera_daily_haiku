@@ -6,28 +6,10 @@ import Client from "../services/api";
 export default function UserProfile() {
     let navigate = useNavigate()
     const {user, setUser, profiles, setProfiles} = useContext(DataContext)
-
-    // const [profiles, setProfiles] = useState({
-    //     username:'',
-    //     email:'',
-    //     first_name:'',
-    //     last_name:'',
-    //     id:'',
-    //     image_url:'',
-    //     tagline:'',
-    //     haikus: [
-    //         {
-    //         id:'',
-    //         created_on:'',
-    //         title:'',
-    //         body:'',
-    //         }
-    //     ]
-    // })
     
     const getProfile = async () => {
         try{ 
-        const response = await Client.get(`users/sakura`)
+        const response = await Client.get(`users/hanami`)
         console.log(response.data)
         setProfiles(response.data)
         } catch (error) {

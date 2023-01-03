@@ -27,7 +27,7 @@ export default function Login() {
           localStorage.setItem('refresh_token', res.data.refresh)
           setTokens(res.data)
           setAuth(true)
-          setUser(formData.username)
+          // setUser(formData.username)
           console.log(res.data)
         } else {
           return alert('Something went wrong')
@@ -39,10 +39,10 @@ export default function Login() {
             localStorage.setItem('user_id', res.data.id)
             localStorage.setItem('username', formData.username)
             setLoginStatus(true)
-            
+            setUser(res.data.username)
             navigate('/feed')
           })
-          
+          console.log(user)
         })
       } catch (error) {
         throw error
