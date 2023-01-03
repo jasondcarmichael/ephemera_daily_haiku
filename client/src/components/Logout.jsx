@@ -1,7 +1,6 @@
-import {useEffect, useContext} from 'react';
+import {useContext} from 'react';
 import { useNavigate } from 'react-router-dom'
 import { DataContext } from "../DataContext";
-import Client from "../services/api";
 
 export default function Logout() {
 
@@ -12,6 +11,7 @@ export default function Logout() {
     const handleLogout = () => {
         setUser(null)
         setAuth(false)
+        setLoginStatus(false)
         localStorage.clear()
         window.location.reload()
         console.log('logout successful')

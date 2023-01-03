@@ -7,7 +7,6 @@ import Logout from "./Logout"
 export default function Header() {
 
     const {user} = useContext(DataContext)
-    console.log(user.username)
 
     return (
         <div className="header-wrapper">

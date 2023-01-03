@@ -39,10 +39,8 @@ export default function Login() {
             localStorage.setItem('user_id', res.data.id)
             localStorage.setItem('username', formData.username)
             setLoginStatus(true)
-            // setUser(res.data.username)
             navigate('/feed')
           })
-          // console.log(user)
         })
       } catch (error) {
         throw error
