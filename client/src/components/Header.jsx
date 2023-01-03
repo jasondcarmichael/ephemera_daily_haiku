@@ -17,6 +17,7 @@ export default function Header() {
                 <span>
                     <h3>Welcome {user.username}!</h3>
                     <Link to="profile"> Profile </Link>
+                    <Link to="feed"> Feed </Link>
                     <Link to="create"> Create </Link>
                     <Logout />
                 </span> : 
