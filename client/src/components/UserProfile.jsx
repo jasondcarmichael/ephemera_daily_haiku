@@ -9,7 +9,7 @@ export default function UserProfile() {
     
     const getProfile = async () => {
         try{ 
-        const response = await Client.get(`users/hanami`)
+        const response = await Client.get(`users/${user.username}`)
         console.log(response.data)
         setProfiles(response.data)
         } catch (error) {
