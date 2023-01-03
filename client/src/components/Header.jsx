@@ -6,8 +6,8 @@ import Logout from "./Logout"
 
 export default function Header() {
 
-    let {user} = useContext(DataContext)
-    console.log(user)
+    const {user} = useContext(DataContext)
+    console.log(user.username)
 
     return (
         <div className="header-wrapper">
@@ -15,10 +15,12 @@ export default function Header() {
             <Link to="/" >Home</Link>
             <span> | </span>
             {user ? <span>
-                <h3>Welcome {user}!</h3>
+                <h3>Welcome {user.username}!</h3>
             </span> : null}
             <Link to="login"> Login </Link>
+            <Link to="profile"> Profile </Link>
             <Link to="create"> Create </Link>
+
             <Logout />
 
         </div>

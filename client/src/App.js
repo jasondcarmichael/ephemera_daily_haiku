@@ -15,7 +15,7 @@ import EditPost from './components/EditPost';
 function App() {
 
   const [loginStatus, setLoginStatus] = useState(false)
-  const [user, setUser] = useState([])
+  const [user, setUser] = useState(null)
   const [auth, setAuth] = useState(false)
   const [tokens, setTokens] = useState({})
   const [haikus, setHaikus] = useState([])

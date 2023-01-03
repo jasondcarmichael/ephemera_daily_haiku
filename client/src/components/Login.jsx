@@ -6,7 +6,7 @@ import Client from "../services/api";
 export default function Login() {
   
     let navigate = useNavigate()
-    const {setLoginStatus, user, setUser, setAuth, setTokens} = useContext(DataContext)
+    const {setLoginStatus, setUser, setAuth, setTokens} = useContext(DataContext)
 
     const [formData, setFormData] = useState({username:'', password:''})
 
@@ -27,7 +27,7 @@ export default function Login() {
           localStorage.setItem('refresh_token', res.data.refresh)
           setTokens(res.data)
           setAuth(true)
-          // setUser(formData.username)
+          setUser({username: formData.username})
           console.log(res.data)
         } else {
           return alert('Something went wrong')
@@ -39,10 +39,10 @@ export default function Login() {
             localStorage.setItem('user_id', res.data.id)
             localStorage.setItem('username', formData.username)
             setLoginStatus(true)
-            setUser(res.data.username)
+            // setUser(res.data.username)
             navigate('/feed')
           })
-          console.log(user)
+          // console.log(user)
         })
       } catch (error) {
         throw error
