@@ -47,22 +47,7 @@ export default function Login() {
       }
     }
 
-    
-//     return (
-//       <div className='form login-form'>
-//         <h1>Login</h1>
-//         <form onSubmit={handleSubmit}>
-      
-//           <input type='text' name='username' placeholder='Enter Username' value={formData.username} onChange={handleChange}/>
-//           <input type='password' name='password' placeholder='Enter Password'value={formData.password} onChange={handleChange}/>
-//           <input type='submit' />      
-//         </form>
-//       </div>
-
-
-//   )
-// }
-
+  
   return (
 
   <section className="bg-gray-50 dark:bg-gray-900">
@@ -84,7 +69,7 @@ export default function Login() {
                     <div className="flex items-center justify-between">
                         <div className="flex items-start">
                             <div className="flex items-center h-5">
-                              <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required=""/>
+                              <input id="remember" aria-describedby="remember" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required=""/>
                             </div>
                             <div className="ml-3 text-sm">
                               <label for="remember" className="text-gray-500 dark:text-gray-300">Remember me</label>
@@ -102,3 +87,18 @@ export default function Login() {
   </section>
   )
 }
+
+//     return (
+//       <div className='form login-form'>
+//         <h1>Login</h1>
+//         <form onSubmit={handleSubmit}>
+      
+//           <input type='text' name='username' placeholder='Enter Username' value={formData.username} onChange={handleChange}/>
+//           <input type='password' name='password' placeholder='Enter Password'value={formData.password} onChange={handleChange}/>
+//           <input type='submit' />      
+//         </form>
+//       </div>
+
+
+//   )
+// }
