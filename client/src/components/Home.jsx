@@ -1,16 +1,14 @@
 import SignIn from "./SignIn"
 import { useState, useEffect, useContext } from "react"
 import DataContext from "../DataContext"
-import axios from "axios"
+import { format } from 'date-fns'
 
 export default function Home() {
-    
-
 
     return (
         <div className="home-wrapper">
             <div>
-                <h2>Today is Sunday, January 1, 2023</h2>
+                <h2>Today is {format(new Date(), "EEEE, MM/dd/yyyy") }</h2>
             </div>
             <br></br>
             <div>
