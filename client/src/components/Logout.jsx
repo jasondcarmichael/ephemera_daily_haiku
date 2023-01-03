@@ -13,7 +13,7 @@ export default function Logout() {
         setAuth(false)
         setLoginStatus(false)
         localStorage.clear()
-        window.location.reload()
+        // window.location.reload()
         console.log('logout successful')
         navigate('/')
     }
