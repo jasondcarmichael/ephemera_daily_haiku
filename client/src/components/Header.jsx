@@ -13,15 +13,15 @@ export default function Header() {
     
             <Link to="/" >Home</Link>
             <span> | </span>
-            {user ? <span>
-                <h3>Welcome {user.username}!</h3>
-            </span> : null}
-            <Link to="login"> Login </Link>
-            <Link to="profile"> Profile </Link>
-            <Link to="create"> Create </Link>
-
-            <Logout />
-
+            {user !== null ? 
+                <span>
+                    <h3>Welcome {user.username}!</h3>
+                    <Link to="profile"> Profile </Link>
+                    <Link to="create"> Create </Link>
+                    <Logout />
+                </span> : 
+                    <Link to="login"> Login </Link>
+            }
         </div>
     )
 }

@@ -5,7 +5,7 @@ import Client from "../services/api";
 
 export default function UserProfile() {
     let navigate = useNavigate()
-    const {user, setUser, profiles, setProfiles} = useContext(DataContext)
+    const {user, profiles, setProfiles} = useContext(DataContext)
     
     const getProfile = async () => {
         try{ 
