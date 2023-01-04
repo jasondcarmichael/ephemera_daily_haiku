@@ -7,14 +7,14 @@ export default function FooterCom() {
             <Footer container={true}>
                 <div className="w-full">
                     <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
-                        {/* <div>
+                        <div>
                             <Footer.Brand
-                                href="https://flowbite.com"
-                                src="https://flowbite.com/docs/images/logo.svg"
-                                alt="Flowbite Logo"
-                                name="Flowbite"
+                                // href="https://flowbite.com"
+                                src="https://cdnb.artstation.com/p/assets/images/images/012/729/133/large/julian-hammond-gibson-blankhaikulogo4.jpg?1536218888"
+                                alt="Ephemera Logo"
+                                name="Ephemera"
                             />
-                        </div> */}
+                        </div>
                     <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
                         <div>
                             <Footer.Title title="learn more" />
@@ -82,3 +82,4 @@ export default function FooterCom() {
         </div>
     )
 }
+

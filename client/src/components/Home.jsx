@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <div className="home-wrapper">
             <div className="hero-section">
-            <section className="bg-white dark:bg-gray-900 bg-opacity-50">
+            <section className="bg-white dark:bg-gray-900 bg-opacity-70 h-full">
                 <div className="max-w-screen-xl px-4 py-8 mx-auto my-1 lg:gap-8 xl:gap-0 lg:py-16">
                     <div className="mr-auto place-self-center lg:col-span-7">
                         <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Welcome to Ephemera</h1>
@@ -34,8 +34,8 @@ export default function Home() {
                         <figcaption className="flex items-center justify-center mt-6 space-x-3">
                             <img className="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture"/>
                             <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div className="pr-3 font-medium text-gray-900 dark:text-white">Micheal Gough</div>
-                                <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at Google</div>
+                                <div className="pr-3 font-medium text-gray-900 dark:text-white">Michael Gough</div>
+                                <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at XYZ inc.</div>
                             </div>
                         </figcaption>
                     </figure>

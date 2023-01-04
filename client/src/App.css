@@ -58,11 +58,12 @@
   white-space: pre-wrap;
 }
 
-/* .hero-section {
-  width: 100%;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/74/Basho_Horohoroto.jpg');
+.hero-section {
+  /* width: 100%; */
+  /* height: 40vh; */
+  background-image: url('https://d7hftxdivxxvm.cloudfront.net/?height=578&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FKP9sPhI4hLocRmfLg8RSJA%2Fnormalized.jpg&width=800');
   background-size: cover;
-  background-position: bottom;
+  background-position: top;
   
-} */
+}
 
