@@ -1,6 +1,7 @@
 import {useContext, useState} from 'react';
 import { useNavigate } from 'react-router-dom'
 import { DataContext } from "../DataContext";
+import { Button } from "flowbite-react"
 
 export default function Logout() {
 

@@ -87,18 +87,3 @@ export default function Login() {
   </section>
   )
 }
-
-//     return (
-//       <div className='form login-form'>
-//         <h1>Login</h1>
-//         <form onSubmit={handleSubmit}>
-      
-//           <input type='text' name='username' placeholder='Enter Username' value={formData.username} onChange={handleChange}/>
-//           <input type='password' name='password' placeholder='Enter Password'value={formData.password} onChange={handleChange}/>
-//           <input type='submit' />      
-//         </form>
-//       </div>
-
-
-//   )
-// }

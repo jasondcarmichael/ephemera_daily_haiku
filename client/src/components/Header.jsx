@@ -2,118 +2,53 @@ import Nav from "./Nav"
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { DataContext } from "../DataContext"
-import { Navbar, Dropdown, Avatar } from "flowbite-react"
-import { BsPersonCircle } from 'react-icons/bs'
+import { Button } from "flowbite-react"
 import Logout from "./Logout"
 
 export default function Header() {
 
     const {user} = useContext(DataContext)
 
-//     return (
-//         <div className="header-wrapper">
-    
-//             <Link to="/" >Home</Link>
-//             <span> | </span>
-//             {user !== null ? 
-//                 <span>
-//                     <h3>Welcome {user.username}!</h3>
-//                     <Link to="profile"> Profile </Link>
-//                     <Link to="feed"> Feed </Link>
-//                     <Link to="create"> Create </Link>
-//                     <Logout />
-//                 </span> : 
-//                     <Link to="login"> Login </Link>
-//             }
-//         </div>
-//     )
-// }
 
-return (
-<div className="header-wrapper">
-    <Navbar fluid={true} rounded={true}>
-        <Navbar.Brand >
-            <img
-            src="https://cdnb.artstation.com/p/assets/images/images/012/729/133/large/julian-hammond-gibson-blankhaikulogo4.jpg?1536218888"
-            className="mr-3 h-6 sm:h-9"
-            alt="Ephemera Logo"
-            />
-            <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-            Ephemera
-            </span>
-        </Navbar.Brand>
-
-    <div className="flex md:order-2">
-       
-            <Dropdown
-            arrowIcon={false}
-            inline={true}
-            label={<Avatar alt="User settings"
-            icon={BsPersonCircle} 
-            // img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" 
-            rounded={true}
-            />}
-            >
-                {user ? 
-                <Dropdown.Header>
-                    <span className="block text-sm">
-                        {user.username}
-                    </span>
-                    <span className="block truncate text-sm font-medium">
-                    name@flowbite.com
-                    </span>
-                </Dropdown.Header> : null}
-                <Dropdown.Item>
-                    <Link to="login"> Sign In </Link>
-                </Dropdown.Item>
-        
-
-                    <Dropdown.Item>
+    return (
+    <header>
+        <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                <a href="/" class="flex items-center">
+                    <img src="https://cdnb.artstation.com/p/assets/images/images/012/729/133/large/julian-hammond-gibson-blankhaikulogo4.jpg?1536218888" class="mr-3 h-6 sm:h-9" alt="Ephemera Logo" />
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Ephemera</span>
+                </a>
+                {user !== null ?
+                <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                    <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                        <li>
+                        <Link to="feed"> Feed </Link>
+                        </li>
+                        <li>
+                        <Link to="create"> Create </Link>  
+                        </li>
+                        <li>
                         <Link to="profile"> Profile </Link>
-                        {/* Profile */}
-                    </Dropdown.Item>
-                    <Dropdown.Item>
-                        My Haiku
-                    </Dropdown.Item>
-                    <Dropdown.Item>
-                        Settings
-                    </Dropdown.Item>
-                    <Dropdown.Divider />
-                    <Dropdown.Item>
+                        </li>
+                        <li>
                         <Logout />
-                    </Dropdown.Item>
-                    {/* <Dropdown.Item>
-                        Sign In
-                    </Dropdown.Item> */}
-            </Dropdown> 
-             
-     
+                        </li>
+                
+                    </ul> 
+                    </div>:
+                    <div class="flex items-center lg:order-2">
+                        <div className="flex md:order-2">
+                            <Button>
+                                <Link to="login"> Sign In </Link>
+                            </Button>
+                            </div>
+                    </div>
+                }
+                
+            </div>
+        </nav>
+    </header>
+    )
+}
 
-        <Navbar.Toggle />
-    </div>
-    <Navbar.Collapse>
-        <Navbar.Link
-        href="/"
-        active={true}
-        >
-        Home
-        </Navbar.Link>
-        <Navbar.Link href="/create" active={true}>
-        Create
-        </Navbar.Link>
-        <Navbar.Link href="/feed" active={true}>
-        Feed
-        </Navbar.Link>
-        {/* <Navbar.Link href="/navbars">
-        Pricing
-        </Navbar.Link>
-        <Navbar.Link href="/navbars">
-        Contact
-        </Navbar.Link> */}
-    </Navbar.Collapse>
 
-       
-
-    </Navbar>
-</div>
-)}
