@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { Card } from "flowbite-react";
 import { DataContext } from "../DataContext";
 import Client from "../services/api";
 
@@ -51,11 +52,20 @@ export default function UserProfile() {
 
 return (
 <div className="profiles">
+<Card>
+    <div className="mx-auto max-w-screen-sm text-center mb-2">
+        <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Your Profile</h2>
+    </div> 
+    
+   
 <section className="bg-white dark:bg-gray-900">
-  <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
-  <img src={profiles.image_url} ></img>
+  <div className="pb-8 px-4 mx-auto max-w-2xl lg:py-8">
+  <div className="flex flex-wrap gap-2">
+    <img class="object-cover w-36 h-36 mb-2 rounded" src={profiles.image_url} alt="Large avatar"/>
+    </div>
+    
       <h2 className="mb-2 text-2xl font-bold leading-none text-gray-900 md:text-3xl dark:text-white">{profiles.username}</h2>
-      <p className="mb-4 text-l font-semibold leading-none text-gray-900 md:text-xl dark:text-white">{profiles.first_name} {profiles.last_name}</p>
+      <p className="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">{profiles.first_name} {profiles.last_name}</p>
       <dl>
           <dt className="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Email</dt>
           <dd className="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">{profiles.email}</dd>
@@ -64,11 +74,14 @@ return (
         <dt className="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Tagline</dt>
         <dd className="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">{profiles.tagline}</dd>
         </dl>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 
         <div className="my-poems-container">
-            <p className="mb-4 text-xl font-extrabold leading-none text-gray-900 md:text-2xl dark:text-white">Haiku History</p>
+            <p className="mb-4 mt-6 text-xl font-bold leading-none text-gray-900 md:text-2xl dark:text-white">Haiku History</p>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
             {profiles.haikus.map((haiku) => (
-                    <div className="my-poems-card" key={haiku.id}>
+                    <div className="mb-4 pb-2.5" id="my-poems-card" key={haiku.id}>
                         <dl>
                             <dt className="mb-2 font-semibold leading-none text-gray-900 dark:text-white">{haiku.title}</dt>
                             <dd className="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">Posted on {haiku.created_on}</dd>
@@ -87,12 +100,13 @@ return (
                                 Delete
                             </button> 
                         </div>
-                   
+                        <hr class="mt-8 mb-2 border-gray-200 sm:mx-auto dark:border-gray-700" />
                 </div>
             ))}
         </div>
   </div>
 </section>
+</Card>
 </div>
 )
 }
