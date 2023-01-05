@@ -30,7 +30,6 @@ export default function UserProfile() {
                     <h2 className="text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Your Profile</h2>
                 </div> 
                 
-            
             <section className="bg-white dark:bg-gray-900">
             <div className="pb-8 px-4 mx-auto max-w-2xl lg:py-8">
                 <div className="flex flex-wrap gap-2">

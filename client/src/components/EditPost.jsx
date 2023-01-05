@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useContext } from "react";
+import { Card, TextInput, Textarea, Button  } from 'flowbite-react'
 import { DataContext } from "../DataContext";
 import Client from "../services/api";
 
@@ -7,7 +8,6 @@ export default function EditPost() {
 
     let location = useLocation()
     let myHaiku = location.state.myHaiku
-    // console.log(myHaiku)
 
     let navigate = useNavigate()
     const {user, setUser, profiles, setProfiles} = useContext(DataContext)
@@ -36,6 +36,7 @@ export default function EditPost() {
             .then((response) => {
             console.log(response.status);
             console.log(response.data.token);
+            navigate('/profile')
           });
 
         } catch (error) {
@@ -54,18 +55,46 @@ export default function EditPost() {
     }
 
     return (
-        <div>
-            <h2>Edit Your Haiku</h2>
-            <form onSubmit={handleSubmit}>
-                <p>Title</p>
-                <input id="title" type="text" placeholder="Title here" maxLength="50" onChange={handleChange} value={formState.title} />
-                <input id="body" type="text" placeholder="Haiku here" maxLength="255" onChange={handleChange} value={formState.body} />
-                <input type="submit" />
-            </form>
-            <div>
-                <button onClick={deletePost}>DELETE</button>
+
+        <div className="create-haiku-wrapper">
+            <div className="max-w-sm">
+                <Card
+                    imgAlt="haiku"
+                    imgSrc="http://cdn.shopify.com/s/files/1/1645/0221/articles/basho-poem-bonhams_150.jpg?v=1507716823"
+                >
+                    <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-6">
+                        <h2 className="mb-2 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Edit Your Haiku</h2>
+                    </div> 
+                </Card>
+            </div>
+            <div className="edit-haiku-form">
+                <Card>
+                <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+                <div>
+                    <TextInput
+                    id="title"
+                    type="text"
+                    maxLength="50" onChange={handleChange} value={formState.title}
+                    />
+                </div>
+                <div id="textarea">
+                <Textarea
+                    id="body"
+                    rows={3}
+                    maxLength="255"
+                    onChange={handleChange} value={formState.body}
+                />
+                </div>
+                <Button type="submit">
+                    Post
+                </Button>
+                </form>
+                <div>
+                        <button onClick={deletePost}>DELETE</button>
+                    </div>
+                </Card>
             </div>
         </div>
-        
+
     )
 }
