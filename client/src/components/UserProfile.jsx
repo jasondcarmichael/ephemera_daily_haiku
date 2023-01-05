@@ -35,7 +35,7 @@ export default function UserProfile() {
             <div className="my-poems-container">
                 <h2>My Poems</h2>
                 {profiles.haikus.map((haiku) => (
-                    <div classname="my-poems-card" key={haiku.id}>
+                    <div className="my-poems-card" key={haiku.id}>
                     <h2>{haiku.created_on}</h2>
                     <h2>{haiku.title}</h2>
                     <h2 className="haiku-body">{haiku.body}</h2>

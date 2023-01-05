@@ -1,4 +1,3 @@
-import Nav from "./Nav"
 import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { DataContext } from "../DataContext"
@@ -36,7 +35,7 @@ export default function Header() {
                         </li>
                 
                     </ul> 
-                    </div>:
+                    </div> : 
                     <div className="flex items-center lg:order-2">
                         <div className="flex md:order-2">
                             <Button>
@@ -45,7 +44,6 @@ export default function Header() {
                             </div>
                     </div>
                 }
-                
             </div>
         </nav>
     </header>
