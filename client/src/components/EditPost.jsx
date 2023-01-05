@@ -10,7 +10,7 @@ export default function EditPost() {
     let myHaiku = location.state.myHaiku
 
     let navigate = useNavigate()
-    const {user, setUser, profiles, setProfiles} = useContext(DataContext)
+    const { profiles } = useContext(DataContext)
 
     const initialState = {
         title: myHaiku.title,
@@ -24,7 +24,6 @@ export default function EditPost() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        // console.log(formState);
         setFormState(initialState);
         const updatePost = {
           user_id: profiles.id,
@@ -86,11 +85,15 @@ export default function EditPost() {
                 />
                 </div>
                 <Button type="submit">
-                    Post
+                    Update
                 </Button>
                 </form>
                 <div>
-                        <button onClick={deletePost}>DELETE</button>
+                    <Button 
+                    onClick={deletePost}
+                    color="failure">
+                        DELETE
+                    </Button>
                     </div>
                 </Card>
             </div>

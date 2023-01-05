@@ -46,7 +46,6 @@ export default function Header() {
                 }
                 
             </div>
-            <hr class="my-4 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-6" />
         </nav>
         
     </header>

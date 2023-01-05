@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card } from "flowbite-react";
 import { DataContext } from "../DataContext";
 import Client from "../services/api";
+import DeletePost from "./DeletePost";
 
 export default function UserProfile() {
 
@@ -22,7 +23,6 @@ export default function UserProfile() {
         getProfile()
     }, [])
 
-
     return (
         <div className="profiles">
             <Card>
@@ -33,7 +33,7 @@ export default function UserProfile() {
             <section className="bg-white dark:bg-gray-900">
             <div className="pb-8 px-4 mx-auto max-w-2xl lg:py-8">
                 <div className="flex flex-wrap gap-2">
-                    <img class="object-cover w-36 h-36 mb-2 rounded" src={profiles.image_url} alt="Large avatar"/>
+                    <img className="object-cover w-36 h-36 mb-2 rounded" src={profiles.image_url} alt="Large avatar"/>
                 </div>
                 
                 <h2 className="mb-2 text-2xl font-bold leading-none text-gray-900 md:text-3xl dark:text-white">{profiles.username}</h2>
@@ -46,7 +46,7 @@ export default function UserProfile() {
                     <dt className="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Tagline</dt>
                     <dd className="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">{profiles.tagline}</dd>
                     </dl>
-                    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+                    <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 
                     <div className="my-poems-container">
                         <p className="mb-4 mt-6 text-xl font-bold leading-none text-gray-900 md:text-2xl dark:text-white">Haiku History</p>
@@ -65,12 +65,9 @@ export default function UserProfile() {
                                             EDIT 
                                         </button>
                                         </Link>
-                                        <button type="button" className="inline-flex items-center text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900">
-                                            <svg aria-hidden="true" className="w-5 h-5 mr-1.5 -ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd"></path></svg>
-                                            Delete
-                                        </button> 
+                                        <DeletePost haiku={haiku}/>
                                     </div>
-                                    <hr class="mt-8 mb-2 border-gray-200 sm:mx-auto dark:border-gray-700" />
+                                    <hr className="mt-8 mb-2 border-gray-200 sm:mx-auto dark:border-gray-700" />
                             </div>
                         ))}
                     </div>
