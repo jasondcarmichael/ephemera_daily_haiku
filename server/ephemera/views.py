@@ -1,10 +1,12 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.core.serializers import serialize
 from rest_framework import generics, status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
-from .serializers import UserSerializer, HaikuSerializer
-from .models import User, Haiku
+from .serializers import UserSerializer, HaikuSerializer, ClassicSerializer
+from .models import User, Haiku, Classic
 
 # Create your views here.
 
@@ -20,7 +22,6 @@ class UserDetailByUsername(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     lookup_field = 'username'
-
 
 class HaikuList(generics.ListCreateAPIView):
     queryset = Haiku.objects.all()
@@ -52,3 +53,7 @@ class UserLogout(APIView):
         token = RefreshToken(refresh_token)
         token.blacklist()
         return Response(status=status.HTTP_205_RESET_CONTENT)
+
+class ClassicList(generics.ListCreateAPIView):
+    queryset = Classic.objects.all()
+    serializer_class = ClassicSerializer

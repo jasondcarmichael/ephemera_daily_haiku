@@ -3,22 +3,8 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
-# class User(models.Model):
-#     username = models.CharField(max_length=50)
-#     email = models.CharField(max_length=50)
-#     password = models.CharField(max_length=50)
-#     tagline = models.CharField(max_length=150, default='no tagline')
-#     image_url = models.CharField(max_length=300, default='no image')
-
-#     def __str__(self):
-#         return self.username
 
 class User(AbstractUser):
-    # first_name = models.CharField()
-    # last_name = models.CharField()
-    # username = models.CharField(unique=True)
-    # email = models.CharField()
-    # password = models.CharField(max_length=50)
     tagline = models.CharField(max_length=150, default='no tagline')
     image_url = models.CharField(max_length=300, default='no image')
 
@@ -33,3 +19,11 @@ class Haiku(models.Model):
 
     def __str__(self):
         return self.title 
+
+class Classic(models.Model):
+    author = models.CharField(max_length=100, default="author name")
+    body = models.TextField(max_length=500, default="classic haiku")
+    year = models.CharField(max_length=20, default="yyyy")
+
+    def __str__(self):
+        return self.author
