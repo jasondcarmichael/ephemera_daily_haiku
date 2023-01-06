@@ -29,7 +29,7 @@ export default function Feed() {
 
         <div className="feed-container">
             <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-                <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Feed</h2>
+                <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Recent Posts</h2>
             </div> 
             <div className="max-w-sm">
                 <Card
@@ -57,9 +57,6 @@ export default function Feed() {
             <div className="feed-wrapper">
                 <section className="bg-white dark:bg-gray-900">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-                    <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
-                        <h4 className="mb-4 text-2xl lg:text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">Recent Posts</h4>
-                    </div> 
                     <div className="grid gap-8 lg:grid-cols-2">
                         {haikus.map((haiku) => (
                         <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700" key={haiku.id}>
