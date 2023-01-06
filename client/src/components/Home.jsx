@@ -25,12 +25,12 @@ export default function Home() {
                             <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
                         </svg> 
                         <blockquote>
-                            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">"Ephemera is just awesome. The daily prompts and the daily classical haikus have helped me break through writer's block and make a habit of creativity. I've even seen the benfits spill over into my business life."</p>
+                            <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">"Ephemera is just awesome. The daily prompts and the daily classical haikus have helped me break through writer's block and make a habit of creativity. I've even seen the benefits spill over into my business life."</p>
                         </blockquote>
                         <figcaption className="flex items-center justify-center mt-6 space-x-3">
-                            <img className="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="profile picture"/>
+                            <img className="w-7 h-7 rounded-full" src="https://www.pixinvent.com/materialize-material-design-admin-template/laravel/demo-4/images/user/12.jpg" alt="profile picture"/>
                             <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                <div className="pr-3 font-medium text-gray-900 dark:text-white">Michael Gough</div>
+                                <div className="pr-3 font-medium text-gray-900 dark:text-white">Michelle Gough</div>
                                 <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at XYZ inc.</div>
                             </div>
                         </figcaption>

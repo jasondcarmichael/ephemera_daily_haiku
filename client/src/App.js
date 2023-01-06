@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom'
 import { DataContext } from './DataContext';
 import Header from './components/Header';
-// import Main from './components/Main';
 import FooterCom from './components/Footer';
 import Login from './components/Login';
 import Home from './components/Home';
