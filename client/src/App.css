@@ -32,6 +32,28 @@
   
 }
 
+.icon {
+  color:	#353935;
+}
+
+.icon:hover {
+  color:blue;
+}
+
+.logout:hover {
+  color:blue;
+  font-weight:600;
+}
+
+@media screen and (max-width: 650px) {
+  .icon {
+    width: 20px;
+  }
+}
+
+
+
+
 /* .testimonial-section {
   background-image: url('http://cdn.shopify.com/s/files/1/1645/0221/articles/basho-poem-bonhams_150.jpg?v=1507716823');
   background-size: cover;
